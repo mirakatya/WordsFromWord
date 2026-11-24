@@ -1,4 +1,3 @@
-# WordsFromWord
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,12 +9,12 @@ public class WordsFromWord {
                   int easyMaxMainWordLength, int mediumMaxMainWordLength,
                   int easyMaxSubWords, int mediumMaxSubWords) {
 
-        /** Values from the assignment's example config. */
+
         static Config defaults() {
             return new Config(3, 8, 7, 10, 15, 30);
         }
 
-        /** Reads config.json (format from the assignment). */
+
         static Config fromFile(Path path) throws Exception {
             String json = Files.readString(path, StandardCharsets.UTF_8);
             return new Config(
@@ -38,12 +37,12 @@ public class WordsFromWord {
 
     static final int ALPHA = 32; // А..Я (Ё is folded into Е)
 
-    /** Upper case, Ё -> Е. */
+
     static String norm(String s) {
         return s.trim().toUpperCase(Locale.ROOT).replace('Ё', 'Е');
     }
 
-    /** Letter counts, or null if the word has non-Russian characters. */
+
     static int[] counts(String w) {
         int[] c = new int[ALPHA];
         for (int i = 0; i < w.length(); i++) {
@@ -122,7 +121,7 @@ public class WordsFromWord {
         return sb.append("  ]\n}").toString();
     }
 
-    /** Reads a UTF-8 file, one word per line; skips empty lines and a BOM. */
+
     static List<String> readWords(Path path) throws Exception {
         List<String> words = new ArrayList<>();
         for (String line : Files.readAllLines(path, StandardCharsets.UTF_8)) {
