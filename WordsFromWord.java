@@ -98,7 +98,7 @@ public class WordsFromWord {
         }
         return levels;
     }
-    // Author: Veronika
+    // Author: Veronika (JSON)
     static String esc(String s) {
         return s.replace("\\", "\\\\").replace("\"", "\\\"");
     }
