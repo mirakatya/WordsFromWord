@@ -30,5 +30,3 @@ The code is divided into logical blocks using author comments.
 1. Open the project in IntelliJ IDEA.
 2. Run the `WordsFromWord` class.
 3. Provide arguments: `dict.txt mains.txt config.json`
-23:20
-Сегодня
