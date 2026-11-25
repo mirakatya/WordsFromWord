@@ -35,7 +35,7 @@ public class WordsFromWord {
     }
     // Author: Veronika (JSON)
     record Level(int id, String mainWord, String difficulty, int minWordsToPass, List<String> subWords) {}
-    // Author: Katya
+    // Author: Katya(Algoritm)
     static final int ALPHA = 32; // А..Я (Ё is folded into Е)
 
 
@@ -53,7 +53,7 @@ public class WordsFromWord {
         }
         return c;
     }
-    // Author: Katya
+    // Author: Katya (Algoritm)
     static List<Level> generate(Collection<String> dictionary, Collection<String> mainWords, Config cfg) {
         // Dedupe by normalized form once; precompute letter counts once (performance).
         Map<String, String> display = new LinkedHashMap<>(); // norm -> uppercase original (keeps Ё)
