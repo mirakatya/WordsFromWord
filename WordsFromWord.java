@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class WordsFromWord {
-    // Author: Mira
+    // Author: Mira(Config)
     record Config(int minSubWordLength, int minWordsToPass,
                   int easyMaxMainWordLength, int mediumMaxMainWordLength,
                   int easyMaxSubWords, int mediumMaxSubWords) {
@@ -36,7 +36,7 @@ public class WordsFromWord {
     // Author: Veronika (JSON)
     record Level(int id, String mainWord, String difficulty, int minWordsToPass, List<String> subWords) {}
     // Author: Katya(Algoritm)
-    static final int ALPHA = 32; // А..Я (Ё is folded into Е)
+    static final int ALPHA = 32; 
 
 
     static String norm(String s) {
@@ -55,8 +55,7 @@ public class WordsFromWord {
     }
     // Author: Katya (Algoritm)
     static List<Level> generate(Collection<String> dictionary, Collection<String> mainWords, Config cfg) {
-        // Dedupe by normalized form once; precompute letter counts once (performance).
-        Map<String, String> display = new LinkedHashMap<>(); // norm -> uppercase original (keeps Ё)
+        Map<String, String> display = new LinkedHashMap<>(); 
         for (String raw : dictionary) {
             String n = norm(raw);
             if (n.length() >= cfg.minSubWordLength() && counts(n) != null)
@@ -122,7 +121,7 @@ public class WordsFromWord {
         return sb.append("  ]\n}").toString();
     }
 
-//Author: Mira
+//Author: Mira(config)
     static List<String> readWords(Path path) throws Exception {
         List<String> words = new ArrayList<>();
         for (String line : Files.readAllLines(path, StandardCharsets.UTF_8)) {
@@ -131,7 +130,7 @@ public class WordsFromWord {
         }
         return words;
     }
-    //Author: Mira
+    //Author: Mira(config)
     public static void main(String[] args) {
         if (args.length < 2) {
             System.err.println("Usage: java WordsFromWord dict.txt mains.txt [config.json]");
