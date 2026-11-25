@@ -33,7 +33,7 @@ public class WordsFromWord {
             return Integer.parseInt(m.group(1));
         }
     }
-    // Author: Veronika
+    // Author: Veronika (JSON)
     record Level(int id, String mainWord, String difficulty, int minWordsToPass, List<String> subWords) {}
     // Author: Katya
     static final int ALPHA = 32; // А..Я (Ё is folded into Е)
