@@ -30,3 +30,23 @@ The code is divided into logical blocks using author comments.
 1. Open the project in IntelliJ IDEA.
 2. Run the `WordsFromWord` class.
 3. Provide arguments: `dict.txt mains.txt config.json`
+
+   
+   ## Code Breakdown
+
+### 1. Configuration and File I/O (Mira)
+This fragment shows how the program reads the configuration JSON and processes input files.
+
+![Mira Code](code.mira.png)
+
+### 2. Core Algorithm (Katya)
+This is the heart of the application. It normalizes words and calculates character counts to filter valid subwords.
+
+![Katya Code Part 1](code.katya1.png)
+![Katya Code Part 2](code.katya2.png)
+
+### 3. JSON Serialization (Veronika)
+This part is responsible for generating the final JSON output and creating data models.
+
+![Veronika Code Part 1](code.veronika1.png)
+![Veronika Code Part 2](code.veronika2.png)
