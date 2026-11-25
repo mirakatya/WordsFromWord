@@ -50,3 +50,14 @@ This part is responsible for generating the final JSON output and creating data 
 
 ![Veronika Code Part 1](code.veronika1.png)
 ![Veronika Code Part 2](code.veronika2.png)
+
+ ## Configuration (`config.json`)
+
+The generation process is controlled by a separate configuration file. **Important:** As per the assignment requirements, this configuration does not appear in the final JSON output; it only affects the generation logic.
+
+Our `config.json` contains the following rules:
+*   `minSubWordLength: 3` — Only words with 3 or more letters are considered valid subwords.
+*   `minWordsToPass: 8` — The player must find at least 8 subwords to pass the level. If the dictionary doesn't have 8 valid subwords, the level is skipped.
+*   `difficultyThresholds` — Sets the rules for `EASY`, `MEDIUM`, and `HARD` difficulties based on the main word length (7 and 10) and the number of subwords (15 and 30).
+
+This modular approach allows balancing the game difficulty by simply editing a JSON file, without recompiling the Java code.
