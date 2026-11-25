@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class WordsFromWord {
+    // Author: Mira
     record Config(int minSubWordLength, int minWordsToPass,
                   int easyMaxMainWordLength, int mediumMaxMainWordLength,
                   int easyMaxSubWords, int mediumMaxSubWords) {
@@ -32,9 +33,9 @@ public class WordsFromWord {
             return Integer.parseInt(m.group(1));
         }
     }
-
+    // Author: Veronika
     record Level(int id, String mainWord, String difficulty, int minWordsToPass, List<String> subWords) {}
-
+    // Author: Katya
     static final int ALPHA = 32; // А..Я (Ё is folded into Е)
 
 
@@ -52,7 +53,7 @@ public class WordsFromWord {
         }
         return c;
     }
-
+    // Author: Katya
     static List<Level> generate(Collection<String> dictionary, Collection<String> mainWords, Config cfg) {
         // Dedupe by normalized form once; precompute letter counts once (performance).
         Map<String, String> display = new LinkedHashMap<>(); // norm -> uppercase original (keeps Ё)
@@ -97,7 +98,7 @@ public class WordsFromWord {
         }
         return levels;
     }
-
+    // Author: Veronika
     static String esc(String s) {
         return s.replace("\\", "\\\\").replace("\"", "\\\"");
     }
@@ -121,7 +122,7 @@ public class WordsFromWord {
         return sb.append("  ]\n}").toString();
     }
 
-
+//Author: Mira
     static List<String> readWords(Path path) throws Exception {
         List<String> words = new ArrayList<>();
         for (String line : Files.readAllLines(path, StandardCharsets.UTF_8)) {
@@ -130,7 +131,7 @@ public class WordsFromWord {
         }
         return words;
     }
-
+    //Author: Mira
     public static void main(String[] args) {
         if (args.length < 2) {
             System.err.println("Usage: java WordsFromWord dict.txt mains.txt [config.json]");
@@ -153,3 +154,5 @@ public class WordsFromWord {
         }
     }
 }
+
+
